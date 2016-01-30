@@ -1,0 +1,271 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+
+</head><!--/head-->
+
+{% block content %}
+]<link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+
+<style>
+a:link    {color:green; background-color:transparent; text-decoration:none}
+{#a:visited {color:pink; background-color:transparent; text-decoration:none}#}
+a:hover   {color:red; background-color:transparent; text-decoration:underline}
+a:active  {color:#3b5998 ; background-color:transparent; text-decoration:underline}
+</style>
+
+    <!--/#header-->
+<br><br>
+	<section id="home">	
+		<div id="main-slider" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#main-slider" data-slide-to="0" class="active"></li>
+				<li data-target="#main-slider" data-slide-to="1"></li>
+				<li data-target="#main-slider" data-slide-to="2"></li>
+		
+			</ol>
+			<div class="carousel-inner">
+				<div class="item active">
+					<img class="img-responsive" src="{% static 'img/Melange Markquest.png' %}" alt="slider">						
+					<div class="carousel-caption">
+						
+					</div>
+				</div>
+				<div class="item">
+					<img class="img-responsive" src="{% static 'img/hammer.jpg' %}" alt="slider">	
+					<div class="carousel-caption">
+						
+					</div>
+				</div>
+				<div class="item">
+					<img class="img-responsive" src="{% static 'img/BRANdAID.png' %}" alt="slider">	
+					<div class="carousel-caption">
+						
+					</div>
+				</div>
+								
+			</div>
+
+			<a class="left carousel-control" href="#main-slider" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#main-slider" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+		</div>    	
+    </section>
+	<!--/#home-->
+
+{#	<section style="font-family: 'Bree Serif';background-image: url("{% static 'img/event-bg.jpg' %}")" id="explore" >#}
+    <section id="explore" style='background-image: url("{% static 'img/event-bg.jpg' %}");font-family: "Bree Serif"' id="explore">
+		<div class="container">
+		
+			<div class="col-md-4 col-md-offset-5 col-sm-5">
+					<h1>Starts In</h1>
+				
+				<br>
+		</div>
+			<div class="row">
+				<!-- <div class="watch">
+					<img class="img-responsive" src="images/watch.png" alt="">
+				</div>	 -->
+				
+				<div class="col-sm-7 col-md-offset-3 col-md-6" >
+					<ul id="countdown">
+						<li>
+							<span class="days time-font">00</span>
+							<p>days </p>
+						</li>
+						<li>
+							<span class="hours time-font">00</span>
+							<p class="">hours </p>
+						</li>
+						<li>
+							<span class="minutes time-font">00</span>
+							<p class="">minutes</p>
+						</li>
+						<li>
+							<span class="seconds time-font">00</span>
+							<p class="">seconds</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+{#			<div class="cart">#}
+{#				<a href="#"><i class="fa fa-shopping-cart"></i> <span>Register</span></a>#}
+{#			</div>#}
+		</div>
+	</section><!--/#explore-->
+
+	{% if upcoming|length > 0 or present|length > 0 %}
+	<section id="event" style='background-image: url("{% static 'img/performar-bg.jpg' %}")' >
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-9">
+					<div id="event-carousel" class="carousel slide" data-ride="carousel">
+						<h2 class="heading">LIVE</h2>
+						<a class="even-control-left" href="#event-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+						<a class="even-control-right" href="#event-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a>
+						<div class="carousel-inner">
+                                {% if present|length > 0 %}
+							<div class="item active">
+
+							<h3>Ongoing Events</h3>
+
+								<div class="row">
+                                    {% for ob in present|slice:":3" %}
+									<div class="col-sm-4">
+										<div class="single-event">
+											<a href="{% url 'event' id=ob.pk %}"><img src="{{ ob.poster.url }}" style="height: 175px;width: 300px">
+        									<h4>{{ ob.name }}</h4></a>
+										</div>
+									</div>
+
+
+                            {% empty %}
+                        {% endfor %}
+								</div>
+							</div>
+                                {% else %}
+                        {% endif %}
+                            {% if upcoming|length > 0 %}
+							<div class="item">
+							<h3>Upcoming Events</h3>
+								<div class="row">
+                                    {% for ob in future|slice:":3" %}
+									<div class="col-sm-4">
+										<div class="single-event">
+											<a href="{% url 'event' id=ob.pk %}"><img src="{{ ob.poster.url }}" style="height: 175px;width: 300px">
+        									<h4>{{ ob.name }}</h4></a>
+										</div>
+									</div>
+                                    {% empty %}
+                        {% endfor %}
+								</div>
+							</div>
+                            {% else %}
+                        {% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!--/#event-->
+    {% else %}
+    {% endif %}
+
+{#<section id="sponsor" style="font-family: 'Bree Serif';background-image: url("{% static 'img/sponsor-bg.jpg' %}")">#}
+	<section id="sponsor" style='background-image: url("{% static 'img/sponsor-bg.jpg' %}");font-family: "Bree Serif"'>
+		<div id="sponsor-carousel">
+			<div class="container">
+				<div class="row">
+
+						<h2>Sponsors</h2>
+
+						<div>
+						<div class="col-sm-3">
+									<a href="#"><img class="img-responsive" src="{% static 'img/sponsor/DUB.png' %}" alt=""></a>
+							</div>
+
+							<div class="col-sm-3">
+									<a href="#"><img class="img-responsive" src="{% static 'img/sponsor/SAIL.png' %}" alt=""></a>
+							</div>
+
+
+							<div class="col-sm-3">
+									<a href="#"><img class="img-responsive" src="{% static 'img/sponsor/BS.png' %}" alt=""></a>
+							</div>
+
+						</div>
+
+				</div>
+			</div>
+{#			<div class="light">#}
+{#				<img class="img-responsive" src="{% static 'img/light.png' %}" alt="">#}
+{#			</div>#}
+		</div>
+	</section><!--/#sponsor-->
+
+	<section id="contact" style="font-family: 'Bree Serif'">
+		<div id="map">
+			<div id="gmap-wrap">
+	 			<div id="gmap">
+	 			</div>
+	    	</div>
+		</div><!--/#map-->
+		<div class="contact-section">
+			<div class="ear-piece">
+				<img class="img-responsive" src="{% static 'img/south-camous.jpg' %}" alt="" style="height: 420px;width: 450px">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-3 col-sm-offset-4">
+						<div class="contact-text">
+							<h3>Connect</h3>
+							<address>
+								E-mail: markibiz@mbe-du.org<br>
+								Facebook: <a target="_blank" href="https://www.fb.com/markibiz" >www.fb.com/markibiz</a><br>
+							</address>
+						</div>
+						<div class="contact-address">
+							<h3>Address</h3>
+							<address>
+								Department Of Business Economics<br>
+								Bentio Jourez Road,<br>
+								University Of Delhi<br>
+                                South Campus<br>
+								Delhi-110021
+							</address>
+						</div>
+					</div>
+					<div class="col-sm-5">
+						<div id="contact-section" style='background-image: url("{% static 'img/contact-bg.jpg' %}")'>
+							<h3>Get Notifications</h3>
+					    	<div class="status alert alert-success" style="display: none"></div>
+					    	<form id="main-contact-form" class="contact-form" name="contact-form" method="POST" action="{% url 'home' %}">{% csrf_token %}
+					            <div class="form-group">
+					                <input id="name" type="text" name="name" class="form-control" required="required" placeholder="Name">
+					            </div>
+					            <div class="form-group">
+					                <input id="email" type="email" name="email" class="form-control" required="required" placeholder="Email ID">
+					            </div>
+
+					            <div class="form-group">
+					                <button type="submit" class="btn btn-primary pull-right">Send</button>
+					            </div>
+					        </form>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+    <!--/#contact-->
+
+    <footer id="footer" style='background-color: #00bbff; font-family: "Bree Serif"'>
+
+    <div class="carousel slide" data-ride="carousel">
+    	<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<div class="text-center carousel-inner center-block">
+						<div class="item active">
+						<p>Don't Blame The Marketing Department. The Buck Stops With The Chief Executive </p>
+						</div>
+						<div class="item">
+							<p>Business Has Only Two Functions:Marketing And Innovations </p>
+						</div>
+						<div class="item">
+							<p>Write When Drunk. Edit When Sober. Marketing Is The Hangover</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			</div>
+		</div>
+        </footer>
+
+{% endblock %}
+<!-- </html> -->

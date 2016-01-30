@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+<link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+<style type="text/css">
+
+	@font-face {
+        font-family: Anton;
+        src: url("{% static 'fonts/Anton.ttf' %}");
+    }
+
+    @font-face {
+    	font-family: Bangers;
+    	src: url("{% static 'fonts/Bangers.ttf' %}");
+    }
+
+    @font-face {
+    	font-family: Nunito;
+    	src: url("{% static 'fonts/Nunito-Regular.ttf' %}");
+    }
+
+	body {
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		background-image: url("{% static 'img/event-back.jpg' %}");
+{#        background-color: #000000;#}
+		color: #43ffa1;
+        padding-top: 50px;
+	}
+
+	#title {
+		font-family: Bangers;
+		font-size: 400%;
+		color: #ff4343;
+
+
+	}
+
+	#description {
+		font-family: Nunito;
+	}
+
+	#event-time {
+		font-family: Bangers;
+	}
+
+	#prize {
+		font-family: Bangers;
+		color: #43a1ff;
+	}
+
+	#register-time {
+		font-family: Nunito;
+	}
+
+	#contact-info {
+		font-family: Nunito;
+		margin: 20px auto;
+		padding: 10px 10px 10px 10px;
+		-webkit-border-radius: 5px;
+		opacity: 0.7;
+		background: #ff4343;
+		width: 70%;
+	}
+
+	#head-image {
+		max-height: 600px;
+		display: block;
+    	margin: 0 auto;
+	}
+
+	.btn #register {
+		margin: 150px auto;
+		padding: 10px 10px 10px 10px;
+		color: #FFFFFF;
+		-webkit-border-radius: 5px;
+		opacity: 0.6;
+		background: black;
+		-webkit-transition: -webkit-transform 1s, opacity 1s, background 1s;
+		font-family: 'Bangers', cursive;
+		letter-spacing: 1px;
+	}
+
+	.btn:hover #register {
+	    opacity: 1;
+	    background: white;
+	    color: black;
+	}
+
+	hr {
+		width: 60%;
+		border-color: #43a1ff;
+	}
+
+
+</style>
+
+
+
+	<div class="container-fluid col-md-10 col-md-offset-1">
+		<div>
+			<h1 id='title' style="font-family: Calibri">
+				New Favourites Of Marketing<br>From Back Waters To Front Line
+			</h1>
+		</div>
+		<hr>
+		<div class = "panel panel-body">
+			<img id='head-image' src="{% static 'img/Melange Markquest.png' %}" class="img-responsive img-rounded">
+		</div>
+        </div>
+
+
+        <div class="row">
+        <div class="col-md-9 col-md-offset-1">
+         <div class="col-md-3 col-md-offset-1">
+            <div class="panel">
+
+                <div class="panel panel-heading panel-danger"><h3 class="text-center" style="color: black; text-align: center; font-size:23px;">Bottom Of The Pyramid Marketing<br>The Bottom At The Top</h3></div>
+
+
+                <div class="panel-body" style="background-color: #83C3F0">
+                    <br><h6 class="pull-left" style="color: black;text-align:center;word-spacing: 8px; letter-spacing: 1px;font-family: 'Bree Serif', serif; font-size: 1em;">
+                    BOP marketing involves addressing over 2.5 Billion potential consumers and over 40 per cent of the Indian lower
+income. This untapped market, being the bottom of pyramid which depicts 43% of Indian National Income surely has
+a huge potential and large consumption base but the flip side of it acquaints us to some surreal terms to the urban
+abode such as: underdeveloped markets, inadequate media coverage, irregular income etc. Market leaders always
+had a keen eye for this potentially profitable segment but factors like illiteracy, extreme price sensitivity and lower
+buying power discouraged them. But with advancement of technology, better access, and saturation of the existing
+marketing due to neck and neck competition this has become hot market now.
+Where exactly are they placed in the assessment of potential market of some of the major firms? Are they still
+potential or have started to become an existing market?</h6></div>
+
+
+            </div>
+            </div>
+
+        <div class="col-md-3 col-md-offset-1">
+            <div class="panel">
+
+
+                <div class="panel panel-heading panel-danger"><h3 class="text-center" style="color: black;text-align:center; font-size:23px;">The Mobile Story<br>Communication to Commerce</h3></div>
+
+                <div class="panel-body" style="background-color: #83C3F0">
+                    <br><h6 class="pull-left" style="color: black;text-align:center;word-spacing: 8px; letter-spacing: 1px;font-family: 'Bree Serif', serif; font-size: 1em;">
+                    With an expected no. of 2 billion smartphone users around the world in 2016, mobile has become the most soughtafter
+medium to market. From cell phones to smartphones, tablets to wearable gadgets, the evolution of mobile
+devices is one of the prime factors influencing the marketing world.
+Mobile was developed as a portable communication device but it has come a long way. From offering basic services to
+being a means of social networking and now even your shopping device, it virtually is conforming to all our needs. In
+the past few years, we have seen the exponential development of MCommerce and this has led to new innovations
+like Mwallets. For many countries, MFS (Mobile Financial Services) are emerging as an important source of revenue.
+This brings, along with millions of users, peta bytes and exabytes of data straight out of the device to the firms for
+further development of their products and strategies.
+Whether it is relationship marketing or data-driven marketing, with mobile ad networks, marketers can reach anybody
+and everybody – anywhere and everywhere – delivering the advertisements directly in their pockets.</h6></div>
+
+
+            </div>
+            </div>
+
+        <div class="col-md-3 col-md-offset-1">
+            <div class="panel">
+                <div class="panel panel-heading panel-danger"><h3 class="text-center" style="color: black; text-align: center; font-size:23px;">Going Hyperlocal<br>Local is Global</h3></div>
+                <div class="panel-body" style="background-color: #83C3F0">
+                    <br><h6 class="pull-left" style="color: black;text-align:center;word-spacing: 8px; letter-spacing: 1px;font-family: 'Bree Serif', serif; font-size: 1em;">
+                    The online market space keeps on growing day-by-day; with it keep coming, different start-ups. However, one segment that has truly caught the eyes of VCs and the business world word-spacing: 8px; letter-spacing: 1pxis the hyperlocal segment. Now, we can enjoy our favorite Starbucks coffee at home; have our daily grocery delivered at the doorstep, can see electrician to doctor at our home in an hour on just one click. The exponential rise in the number of internet users, easier payment options and other such progressive factors have paved the way for hyperlocal businesses. While we see the rise of on-demand startups like Grofers, Peppertap and urbanclap etc., such start-ups also have raised huge venture capital in last few months, e-commerce giants Flipkart, Amazon, Snapdeal and Paytm see hyperlocal as the next avenue to accelerate scale.
+However, only time can tell, what will be the growth trajectory of much sought and believed lucrative hyperlocal segment. Will they escalate to the predicted level or tumble on the way?</h6></div>
+
+
+            </div>
+            </div>
+            </div>
+            </div>
+    <div class="panel panel-body col-md-8 col-md-offset-2">
+        <div class="fb-comments" data-href="{{ request.build_absolute_uri }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+
+    </div>
+
+
+
+{% endblock %}

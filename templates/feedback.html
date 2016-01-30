@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    <style>
+
+   body {
+    background-image: url("{% static 'img/event-back.jpg' %}");
+        padding-top: 50px;
+        color: white;
+        
+        word-spacing: 5px;
+        letter-spacing: 1px;
+        color: #43ffa1;
+    }
+
+
+
+    </style>
+    <div id="back" >
+    <h1 style="color: #43a1ff;" class="h1 text-center ">We Would Love To Hear From You!!!! </h1>
+    <div style="padding-top: 10px">
+<div class="row">
+
+<div class="col-sm-offset-3 col-sm-6">
+    <form method="post" action="{% url 'home' %}" >{% csrf_token %}
+{{ form|crispy }}
+<input class="btn btn-success" type="submit" value="submit">
+    </form>
+    </div>
+</div>
+    </div>
+    </div>
+
+{% endblock %}

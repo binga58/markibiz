@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+<link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+    <style>
+    body {
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		background-image: url("{% static 'img/event-back.jpg' %}");
+{#        background-color: #000000;#}
+
+	}
+
+    </style>
+    <br><br><br>
+    <h1 style="font-family: 'Bangers', cursive; letter-spacing: 3px; color: #ff4343;
+font-size: 4em;">THE TEAM</h1>
+    <div style="padding-top: 100px">
+{#    <div style="background-image: url("{% static 'img/event-back.jpg' %}")">#}
+        {% for obj in object %}
+            <div class="col-md-3 col-md-offset-1">
+            <div class="panel">
+                <div class="panel panel-heading panel-danger"><h2 class="text-center">{{ obj.name }}</h2></div>
+                <div class="panel-body">
+                    <img src="{{ obj.image.url }}" class="img-thumbnail img-hover" style="height: 300px"><br>
+                    {{ obj.about }}</div>
+                <div class="panel-footer">{{ obj.email }}<br>{{ obj.mobile }}</div>
+
+            </div>
+            </div>
+
+            </div>
+        {% endfor %}
+
+
+{#    </div>#}
+
+
+{% endblock %}

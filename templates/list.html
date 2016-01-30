@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <style>
+    body{
+{#        background-color: #000000#}
+        background-image: url("{% static 'img/event-back.jpg' %}");
+
+    }
+    </style>
+    <div class="container container-fluid col-md-10 col-md-offset-1" style="padding-top: 50px">
+    <h2 class="panel panel-body col-md-6 col-md-offset-3">Ongoing Events... </h2><br>
+
+    {% for ob in present %}
+        <div class="panel panel-body col-md-3 col-sm-offset-1">
+        <a href="{% url 'event' id=ob.pk %}"><img src="{{ ob.poster.url }}" style="height: 175px;width: 240px">
+        <h4 style="text-align: center">{{ ob.name }}</h4></a>
+        </div>
+    {% endfor %}
+
+
+    <h2 class="panel panel-body col-md-6 col-md-offset-3">Upcoming Events... </h2><br>
+
+    {% for ob in upcoming %}
+        <div class="panel panel-body col-md-3 col-sm-offset-1">
+        <a href="{% url 'event' id=ob.pk %}"><img src="{{ ob.poster.url }}" style="height: 100px;width: 240px">
+        <h4 style="text-align: center">{{ ob.name }}</h4></a>
+        </div>
+    {% endfor %}
+
+
+    <h2 class="panel panel-body col-md-6 col-md-offset-3">Past Events... </h2><br>
+
+    {% for ob in past %}
+        <div class="panel panel-body col-md-3 col-sm-offset-1">
+        <a href="{% url 'event' id=ob.pk %}"><img src="{{ ob.poster.url }}" style="height: 100px;width: 240px">
+        <h4 style="text-align: center">{{ ob.name }}</h4></a>
+        </div>
+    {% endfor %}
+
+
+    </div>
+{% endblock %}

@@ -1,0 +1,186 @@
+{#{% load staticfiles %}#}
+{##}
+{#<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>#}
+{##}
+{#<style type="text/css">#}
+{##}
+{##}
+{#.navbar{#}
+{#  background-color: #005EB5;#}
+{#  font-family: 'Passion One', cursive;#}
+{#  opacity: 0.7;#}
+{#}#}
+{##}
+{#.navbar-brand{#}
+{#  font-size: 2em;#}
+{#  color: #317;#}
+{#  text-shadow: #A22 2px 2px 2px;#}
+{#}#}
+{##}
+{#.navbar-brand:visited{#}
+{#  color: #317;#}
+{#  background-color: #005EB5;#}
+{#}#}
+{##}
+{#.navbar-brand:hover{#}
+{#  background-color: #772244;#}
+{#  color: #B84;#}
+{#}#}
+{##}
+{#.navbar-nav{#}
+{#  float: right;#}
+{# }#}
+{#.nav li a{#}
+{#  color: #317;#}
+{#  font-size: 2em;#}
+{#  text-shadow: #A22 2px 2px 2px;#}
+{#}#}
+{##}
+{#.nav li a:visited{#}
+{#  background-color: #005EB5;#}
+{#}#}
+{##}
+{#.nav li a:hover{#}
+{#  background-color: #772244;#}
+{#  color: #B84;#}
+{#}#}
+{##}
+{#</style>#}
+{##}
+{##}
+{##}
+{#    <nav class="navbar navbar-fixed-top ">#}
+{#    <div class="container-fluid">#}
+{#      <div class="navbar-header">#}
+{#        <a class="navbar-brand" href="#" target="_blank">MARKIBIZ</a>#}
+{#      </div>#}
+{#      <div class="container-fluid">#}
+{#        <ul class="nav navbar-nav">#}
+{#          <li><a href="#page-top">Events</a></li>#}
+{#          <li><a href="#about-me">About</a></li>#}
+{#          <li><a href="#my-work">Contact</a></li>#}
+{#          <li><a href="#contact-me">Get Notified</a></li>#}
+{#        </ul>#}
+{#      </div>#}
+{#    </div>#}
+{#  </nav>#}
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% load staticfiles %}
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: darkslategrey">
+        <div class="container" >
+            <!-- Brand and toggle get grouped for better mobile display -->
+
+            <div class="navbar-header" style="color: whitesmoke">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="{% url 'home' %}">MARKIBIZ
+{#                    <img src="{% static 'img/logo.png' %} " style="height:30px;width: 100px">#}
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">MARKQUEST'16<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="{% url 'markquest' %}">Speakers</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'list' %}">Events</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'list' %}">Events</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'team' %}">Team</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'feedback' %}">Feedback</a>
+                    </li>
+{#                    <li class="dropdown">#}
+{#                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>#}
+{#                        <ul class="dropdown-menu">#}
+{#                            <li>#}
+{#                                <a href="portfolio-1-col.html">1 Column Portfolio</a>#}
+{#                            </li>#}
+{#                            <li>#}
+{#                                <a href="portfolio-2-col.html">2 Column Portfolio</a>#}
+{#                            </li>#}
+{#                            <li>#}
+{#                                <a href="portfolio-3-col.html">3 Column Portfolio</a>#}
+{#                            </li>#}
+{#                            <li>#}
+{#                                <a href="portfolio-4-col.html">4 Column Portfolio</a>#}
+{#                            </li>#}
+{#                            <li>#}
+{#                                <a href="portfolio-item.html">Single Portfolio Item</a>#}
+{#                            </li>#}
+{#                        </ul>#}
+{#                    </li>#}
+{#                    <li class="dropdown">#}
+{#                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>#}
+{#                        <ul class="dropdown-menu">#}
+{#                            <li>#}
+{#                                <a href="blog-home-1.html">Blog Home 1</a>#}
+{#                            </li>#}
+{#                            <li>#}
+{#                                <a href="blog-home-2.html">Blog Home 2</a>#}
+{#                            </li>#}
+{#                            <li>#}
+{#                                <a href="blog-post.html">Blog Post</a>#}
+{#                            </li>#}
+{#                        </ul>#}
+{#                    </li>#}
+                    <li><img src="{% static 'img/MBA(BE) Final Logo.png' %}"></li>
+                    <li><img src="{% static 'img/logo_du.png' %}"></li>
+
+{#                    <li class="dropdown">#}
+{#                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>#}
+{#                        <ul class="dropdown-menu">#}
+{#                            <li>#}
+{#                                <a href="full-width.html">Full Width Page</a>#}
+{#                            </li>#}
+{#                            <li>#}
+{#                                <a href="sidebar.html">Sidebar Page</a>#}
+{#                            </li>#}
+{#                            <li>#}
+{#                                <a href="faq.html">FAQ</a>#}
+{#                            </li>#}
+{#                            <li>#}
+{#                                <a href="404.html">404</a>#}
+{#                            </li>#}
+{#                            <li>#}
+{#                                <a href="pricing.html">Pricing Table</a>#}
+{#                            </li>#}
+{#                        </ul>#}
+{#                    </li>#}
+                </ul>
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
