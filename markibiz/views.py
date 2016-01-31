@@ -34,7 +34,9 @@ def home(request):
         email = request.POST.get('email')
         user = User(name = name, email_id = email)
         user.save()
-        return HttpResponseRedirect('')
+        a = request.build_absolute_uri()
+
+        return HttpResponseRedirect(a)
 
     else:
         return render(request,'home.html', context)

@@ -22,7 +22,7 @@ class Event(models.Model):
 
 class User(models.Model):
     name = models.CharField(max_length=128,blank=False,null=False)
-    email_id = models.EmailField(blank=False,null=False)
+    email_id = models.EmailField(blank=False,null=False,unique=True)
 
 class Feedback(models.Model):
     name = models.CharField(max_length=128)
