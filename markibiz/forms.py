@@ -28,5 +28,5 @@ class FeedbackForm(forms.ModelForm):
         ButtonHolder(
             Submit('submit', 'Submit', css_class='button white')
         ),
-            Field('email',css_class="password-fields"),
+
             )

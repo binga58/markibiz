@@ -44,7 +44,9 @@ def feedback(request):
     context = {"form":form}
     if form.is_valid():
         instance = form.save(commit=False)
+
         instance.save()
+
         return (request,'home.html',{})
 
 
