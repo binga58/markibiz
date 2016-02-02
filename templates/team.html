@@ -24,7 +24,7 @@ font-size: 4em;">THE TEAM</h1>
         {% for obj in object %}
             <div class="col-md-3 col-md-offset-1">
             <div class="panel">
-                <div class="panel panel-heading panel-danger"><h2 class="text-center">{{ obj.name }}</h2></div>
+                <div class="panel panel-heading panel-danger"><h4 style="font-size: 1.5em;" class="text-center">{{ obj.name }}</h4></div>
                 <div class="panel-body">
                     <img src="{{ obj.image.url }}" class="img-thumbnail img-hover" style="height: 300px"><br>
                     {{ obj.about }}</div>
